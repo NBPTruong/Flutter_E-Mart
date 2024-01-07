@@ -6,8 +6,15 @@ import 'package:emart_app/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool? isCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +42,14 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(
-                      checkColor: redColor,
-                      value: false,
-                      onChanged: (newValue) {},
+                      activeColor: redColor,
+                      checkColor: whiteColor,
+                      value: isCheck,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isCheck = newValue;
+                        });
+                      },
                     ),
                     10.widthBox,
                     Expanded(
@@ -47,28 +59,28 @@ class SignupScreen extends StatelessWidget {
                           TextSpan(
                             text: "I agree to the ",
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: fontGrey,
                             ),
                           ),
                           TextSpan(
                             text: termAndCond,
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: redColor,
                             ),
                           ),
                           TextSpan(
                             text: " & ",
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: fontGrey,
                             ),
                           ),
                           TextSpan(
                             text: privacyPolicy,
                             style: TextStyle(
-                              fontFamily: bold,
+                              fontFamily: regular,
                               color: redColor,
                             ),
                           ),
@@ -79,7 +91,7 @@ class SignupScreen extends StatelessWidget {
                 ),
                 5.heightBox,
                 ourButton(
-                        color: redColor,
+                        color: isCheck == true ? redColor : lightGrey,
                         title: signup,
                         textColor: whiteColor,
                         onPress: () {})
@@ -87,26 +99,15 @@ class SignupScreen extends StatelessWidget {
                     .width(context.screenWidth - 50)
                     .make(),
                 10.heightBox,
-                RichText(text: const TextSpan(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextSpan(
-                      text: alreadyHaveAccount,
-                      style: TextStyle(
-                        fontFamily: bold,
-                        color: fontGrey,
-                      )
-                    ),
-                    TextSpan(
-                      text: login,
-                      style: TextStyle(
-                        fontFamily: bold,
-                        color: redColor,
-                      )
-                    )
-                  ]
-                ),).onTap(() {
-                  Get.back();
-                }),
+                    alreadyHaveAccount.text.color(fontGrey).make(),
+                    login.text.color(redColor).make().onTap(() {
+                      Get.back();
+                    }),
+                  ],
+                )
               ],
             )
                 .box

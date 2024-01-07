@@ -1,5 +1,6 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/views/auth_screen/signup_screen.dart';
+import 'package:emart_app/views/home_screen/home_screen.dart';
 import 'package:emart_app/widgets_common/applogo_widget.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';
 import 'package:emart_app/widgets_common/custom_textfield.dart';
@@ -36,7 +37,9 @@ class LoginScreen extends StatelessWidget {
                         color: redColor,
                         title: login,
                         textColor: whiteColor,
-                        onPress: () {})
+                        onPress: () {
+                          Get.to(() => const HomeScreen());
+                        })
                     .box
                     .width(context.screenWidth - 50)
                     .make(),
