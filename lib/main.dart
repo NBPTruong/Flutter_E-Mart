@@ -1,5 +1,5 @@
-import 'package:emart_app/views/auth_screen/login_screen.dart';
-// import 'package:emart_app/views/splash_screen/splash_screen.dart';
+// import 'package:emart_app/views/auth_screen/login_screen.dart';
+import 'package:emart_app/views/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'consts/consts.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent),
           fontFamily: regular,
         ),
-        home: const LoginScreen(), //SplashScreen(),
+        home: const SplashScreen(),  //LoginScreen(),
       );
   }
 }
