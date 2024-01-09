@@ -7,6 +7,9 @@ Widget ourButton({onPress, color, textColor, String? title}) {
       // ignore: deprecated_member_use
       primary: color,
       padding: const EdgeInsets.all(12),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0),
+      ),
       
     ),
     onPressed: onPress,
