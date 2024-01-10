@@ -7,7 +7,8 @@ Widget bgWidget({Widget? child}) {
         image: DecorationImage(
       image: AssetImage(imgBackground),
       fit: BoxFit.fill,
-    )),
+    ),
+    ),
     child: child,
   );
 }

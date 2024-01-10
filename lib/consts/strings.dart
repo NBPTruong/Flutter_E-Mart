@@ -15,6 +15,7 @@ const createNewAccount = "or, create New Account";
 const loginWith = "Login with";
 const privacyPolicy = "Privacy Policy";
 const termAndCond = "Terms and Conditions";
+const logout = "Logout";
 const alreadyHaveAccount = "Already have an account ? ";
 
 const home = "Home",
@@ -53,3 +54,7 @@ const video = "Video",
       returnpolity = "Return Polity",
       supportPolicy = "Support Policy",
       productsyoumaylike = "Products you may also like";
+
+      const wishlist = "My Wishlist",
+            orders = "My Orders",
+            message = "My Messages";
