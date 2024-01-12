@@ -59,4 +59,6 @@ const video = "Video",
 
       const wishlist = "My Wishlist",
             orders = "My Orders",
-            message = "My Messages";
+            message = "My Messages",
+            oldPass = "Old Password",
+            newPass = "New Password";

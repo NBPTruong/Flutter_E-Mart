@@ -2,6 +2,7 @@
     package="com.example.emart_app">
    <application
         android:label="emart_app"
+        android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
